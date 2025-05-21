@@ -8,7 +8,7 @@ import Image from "next/image";
 
 function MobileNavigation({ isOpen, toggleMenu }: { isOpen: boolean; toggleMenu: () => void }) {
     return (
-        <div className={`fixed inset-0 z-50 pr-6 bg-ash bg-opacity-90 flex flex-col items-center gap-4 justify-center transform ${isOpen ? "translate-x-0" : "translate-x-full"} transition-transform duration-300 md:hidden`}>
+        <div className={`fixed inset-0 z-50 bg-color pr-6 bg-ash bg-opacity-90 flex flex-col items-center gap-4 justify-center transform ${isOpen ? "translate-x-0" : "translate-x-full"} transition-transform duration-300 md:hidden`}>
             <button onClick={toggleMenu} className="absolute right-6 text-white">
                 <X size={32} />
             </button>
@@ -29,7 +29,7 @@ export function Header() {
     const toggleMenu = () => setMenuOpen(!menuOpen);
     return (
         <header className="bg-ash">
-            <nav className="relative flex items-center lg:justify-center justify-end the-header px-6 md:px-12 ">
+            <nav className="relative flex items-center bg-color lg:justify-center justify-end the-header px-6 md:px-12 ">
                 {/* Logo on the Left */}
                 <div className="flex absolute left-1 md:left-12 pt-8">
                     <Image src={img} width={250} height={250} alt="Logo" />
