@@ -38,3 +38,10 @@ body {
 .animate-logo-cloud {
   animation: scroll-left 30s linear infinite;
 }
+
+.bg-color{
+  background-color: #0F1B2A;
+}
+.text-bg{
+  text-decoration-color: #0F1B2A;
+}

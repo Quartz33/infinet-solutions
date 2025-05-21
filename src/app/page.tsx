@@ -1,6 +1,9 @@
 import { Header } from "./components/header"
 import {Hero} from "./components/hero"
 import AnimatedLogoCloud from "./components/LogoCloud"
+import Footer from "./components/Footer"
+import AboutUs from "./components/AboutUs"
+import Services from "./components/services"
 
 export default function Home() {
   return (
@@ -8,6 +11,9 @@ export default function Home() {
     <Header />
     <Hero />
     <AnimatedLogoCloud />
+    <AboutUs />
+    <Services />
+    <Footer />
     </>
   )
 }
