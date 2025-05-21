@@ -1,6 +1,5 @@
 "use client"
 
-import Link from "next/link"
 import img from "@/app/images/hero.png"
 import Image from "next/image";
 import { ArrowRight } from "lucide-react";
