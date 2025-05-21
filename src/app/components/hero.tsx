@@ -9,7 +9,7 @@ export function Hero() {
 
     return (
         <section id="main">
-            <div className="container">
+            <div className="container bg-color">
                 <div className="pt-6">
                     <Image src={img} width={450} height={100} alt="hero" />
                 </div>
