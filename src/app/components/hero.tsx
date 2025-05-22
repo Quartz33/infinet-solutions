@@ -13,7 +13,7 @@ export function Hero() {
                 <div className="pt-6">
                     <Image src={img} width={450} height={100} alt="hero" />
                 </div>
-                <div className="text-white text-center text-4xl font-[Roboto] font-semibold">
+                <div className="text-white text-center text-4xl font-semibold">
                     <h2>Infinet Solutions</h2>
                     <h2>Infinite Connections</h2>
                     <h2>Infinite Growth</h2>
