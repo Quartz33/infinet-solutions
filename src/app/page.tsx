@@ -4,6 +4,8 @@ import AnimatedLogoCloud from "./components/LogoCloud"
 import Footer from "./components/Footer"
 import AboutUs from "./components/AboutUs"
 import Services from "./components/services"
+import { ContactUs } from "./components/Contactus"
+
 
 export default function Home() {
   return (
@@ -13,6 +15,7 @@ export default function Home() {
     <AnimatedLogoCloud />
     <AboutUs />
     <Services />
+    <ContactUs />
     <Footer />
     </>
   )

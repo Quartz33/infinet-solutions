@@ -29,7 +29,7 @@ export function Header() {
     const toggleMenu = () => setMenuOpen(!menuOpen);
     return (
         <header className="bg-ash">
-            <nav className="relative flex items-center bg-color lg:justify-center justify-end the-header px-6 md:px-12 ">
+            <nav className="relative flex items-center bg-color lg:justify-center justify-end the-header px-6 md:px-12">
                 {/* Logo on the Left */}
                 <div className="flex absolute left-1 md:left-12 pt-8">
                     <Image src={img} width={250} height={250} alt="Logo" />
