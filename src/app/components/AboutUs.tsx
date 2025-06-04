@@ -32,7 +32,7 @@ const AboutUs = () => {
                 </div>
 
 
-                <button className="inline-flex items-center text-indigo-600 font-medium hover:underline transition pb-8">
+                <button className="inline-flex items-center text-blue-600 font-medium hover:underline transition pb-8">
                     Learn More About Us <ArrowRight className="ml-2 w-4 h-4" />
                 </button>
             </div>
