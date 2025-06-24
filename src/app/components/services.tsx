@@ -1,5 +1,6 @@
-"use client"
-import React from 'react';
+"use client";
+
+import React from "react";
 import {
   ShieldCheck,
   Cloud,
@@ -7,8 +8,15 @@ import {
   Server,
   Phone,
   Repeat,
-} from 'lucide-react';
-import { motion } from 'framer-motion';
+} from "lucide-react";
+import Image from "next/image";
+import { motion } from "framer-motion";
+import businessInternetImg from '@/app/images/business-internet.jpg'
+import cloudImg from '@/app/images/Cloud-Telephony-Guide.jpg'
+import managedServicesImg from '@/app/images/managed services.png'
+import businessContinuityImg from '@/app/images/business-continuity.webp'
+import wifiImg from '@/app/images/wireless-internet.jpg'
+import vpnImg from '@/app/images/vpn.webp'
 
 const services = [
   {
@@ -16,36 +24,42 @@ const services = [
     description:
       "Experience lightning-fast speeds with our fibre optic service. Stay connected and boost your business performance.",
     icon: Server,
+    image: businessInternetImg,
   },
   {
     title: "Cloud-Based Phone System",
     description:
       "Upgrade to our cloud phone system with advanced features and seamless integration for your business tools.",
     icon: Phone,
+    image: cloudImg,
   },
   {
     title: "Managed Security Services",
     description:
       "Protect your business from cyber threats. Our experts manage your network security so you don’t have to.",
     icon: ShieldCheck,
+    image: managedServicesImg,
   },
   {
     title: "Business Continuity",
     description:
       "Prepare for anything. Our continuity solutions ensure minimal downtime and fast recovery during any disruption.",
     icon: Repeat,
+    image: businessContinuityImg,
   },
   {
     title: "Wireless Networking",
     description:
       "Connect your team with reliable and secure high-speed wireless networking across your office.",
     icon: Wifi,
+    image: wifiImg,
   },
   {
     title: "Virtual Private Network",
     description:
       "Enable secure access for your remote workforce with our encrypted VPN service, keeping your data safe.",
     icon: Cloud,
+    image: vpnImg,
   },
 ];
 
@@ -57,7 +71,7 @@ const cardVariants = {
     transition: {
       delay: i * 0.1,
       duration: 0.5,
-      ease: 'easeOut',
+      ease: "easeOut",
     },
   }),
 };
@@ -68,7 +82,8 @@ const Services = () => {
       <div className="max-w-7xl mx-auto text-center mb-16">
         <h2 className="text-4xl font-bold text-white">Our Services</h2>
         <p className="text-gray-300 mt-4 text-lg max-w-2xl mx-auto">
-          Empowering your business with modern telecom solutions tailored for performance, security, and growth.
+          Empowering your business with modern telecom solutions tailored for
+          performance, security, and growth.
         </p>
       </div>
 
@@ -81,15 +96,26 @@ const Services = () => {
             whileInView="visible"
             viewport={{ once: true, amount: 0.2 }}
             variants={cardVariants}
-            className="bg-[#f4f4f4] p-6 rounded-2xl shadow-md hover:shadow-lg transition"
+            className="bg-white text-[#0f1b2A] rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition"
           >
-            <div className="flex items-center justify-center w-12 h-12 mb-4 bg-indigo-100 text-indigo-600 rounded-full">
-              <service.icon className="w-6 h-6" />
+            <Image
+              src={service.image}
+              alt={service.title}
+              className="w-full h-48 object-cover"
+              width={400}
+              height={192}
+            />
+            <div className="p-6">
+              <div className="flex items-center justify-center w-12 h-12 mb-4 bg-indigo-100 text-indigo-600 rounded-full mx-auto">
+                <service.icon className="w-6 h-6" />
+              </div>
+              <h3 className="text-xl font-bold text-center mb-2">
+                {service.title}
+              </h3>
+              <p className="text-sm text-center text-gray-700">
+                {service.description}
+              </p>
             </div>
-            <h3 className="text-xl font-semibold text-gray-900 mb-2">
-              {service.title}
-            </h3>
-            <p className="text-gray-700 text-sm">{service.description}</p>
           </motion.div>
         ))}
       </div>

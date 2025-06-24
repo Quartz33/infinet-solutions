@@ -44,3 +44,33 @@ body {
 .text-bg{
   text-decoration-color: #0F1B2A;
 }
+
+@layer utilities {
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-8px);
+    }
+  }
+
+  .animate-glow {
+    animation: glow 4s ease-in-out infinite alternate;
+  }
+
+  @keyframes glow {
+    from {
+      opacity: 0.2;
+      filter: drop-shadow(0 0 4px #ffffff55);
+    }
+    to {
+      opacity: 0.5;
+      filter: drop-shadow(0 0 10px #ffffffaa);
+    }
+  }
+}

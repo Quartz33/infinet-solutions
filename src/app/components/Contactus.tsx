@@ -1,94 +1,170 @@
-"use client"
-import { motion } from "framer-motion";
+"use client";
 
-const containerVariants = {
-    hidden: { opacity: 0, y: 30 },
-    visible: {
-        opacity: 1,
-        y: 0,
-        transition: {
-            duration: 0.6,
-            ease: "easeOut",
-            when: "beforeChildren",
-            staggerChildren: 0.15,
-        },
-    },
-};
-
-const inputVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0 },
-};
+import { useRef, useState } from "react";
+import emailjs from "@emailjs/browser";
+import { FaMapMarkerAlt, FaEnvelope, FaPhone } from "react-icons/fa";
 
 export function ContactUs() {
-    return (
-        <motion.div
+  const formRef = useRef<HTMLFormElement>(null);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [messageSent, setMessageSent] = useState(false);
 
-            className="min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-100 to-slate-200 p-4"
-            variants={containerVariants}
-            initial="hidden"
-            animate="visible"
-        >
-            <motion.div className="bg-white shadow-2xl rounded-2xl max-w-3xl w-full p-8 sm:p-12" variants={containerVariants}>
-                <motion.h2
-                    className="text-4xl font-bold text-slate-800 mb-4 text-center"
-                    variants={inputVariants}
-                >
-                    Contact Us
-                </motion.h2>
-                <motion.p
-                    className="text-slate-500 text-center mb-10"
-                    variants={inputVariants}
-                >
-                    Have a question or want to work together? Fill out the form below!
-                </motion.p>
-                <svg
-                    className="absolute top-0 left-1/2 -translate-x-1/2 -z-10"
-                    width="100%"
-                    height="300"
-                    viewBox="0 0 1440 320"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                    preserveAspectRatio="none"
-                >
-                    <path
-                        d="M0,160 C480,320 960,0 1440,160 L1440,0 L0,0 Z"
-                        fill="#000000" /* Adjust color */
-                        opacity="1" /* Optional transparency */
-                    />
-                </svg>
+  const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID as string;
+  const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID as string;
+  const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLICKEY as string;
 
-                <form className="space-y-6">
-                    {["Name", "Email", "Company Name"].map((label, i) => (
-                        <motion.div key={i} variants={inputVariants}>
-                            <label className="block text-sm font-medium text-slate-700 mb-1">{label}</label>
-                            <input
-                                type={label === "Email" ? "email" : "text"}
-                                className="w-full px-4 py-3 border border-slate-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-400 transition-all duration-300"
-                                placeholder={`Enter your ${label.toLowerCase()}`}
-                            />
-                        </motion.div>
-                    ))}
+  const sendEmail = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setIsSubmitting(true);
 
-                    <motion.div variants={inputVariants}>
-                        <label className="block text-sm font-medium text-slate-700 mb-1">Message</label>
-                        <textarea
-                            rows={5}
-                            className="w-full px-4 py-3 border border-slate-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-400 transition-all duration-300"
-                            placeholder="Write your message here..."
-                        />
-                    </motion.div>
+    if (!formRef.current) return;
 
-                    <motion.div className="text-center pt-4" variants={inputVariants}>
-                        <button
-                            type="submit"
-                            className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-3 px-8 rounded-xl shadow-lg transition-all duration-300 transform hover:scale-105"
-                        >
-                            Send Message
-                        </button>
-                    </motion.div>
-                </form>
-            </motion.div>
-        </motion.div>
-    );
+    try {
+      const response = await emailjs.sendForm(
+        serviceId,
+        templateId,
+        formRef.current,
+        publicKey
+      );
+
+      if (response.status === 200) {
+        setMessageSent(true);
+        formRef.current.reset();
+      }
+    } catch (error) {
+      console.error("Error sending email:", error);
+    }
+
+    setIsSubmitting(false);
+  };
+
+  return (
+    <section className="bg-[#001e7c] text-white py-20 px-6 md:px-12">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+        {/* Left column */}
+        <div>
+          <h2 className="text-4xl font-bold leading-tight mb-6">
+            Your next best business decision starts here
+          </h2>
+          <p className="text-lg text-blue-100 mb-12 max-w-md">
+            We believe great service starts before you even become a customer.
+            Have a question? Need a quote? Want to know why we’re different?
+            Our team is ready.
+          </p>
+
+          <div className="space-y-10 text-sm text-white">
+            <div className="flex items-start gap-4">
+              <span className="text-yellow-400 pt-1">
+                <FaMapMarkerAlt size={20} />
+              </span>
+              <div>
+                <p className="font-semibold text-lg">Office Address</p>
+                <p>Telephone House, 18 Christchurch Rd,</p>
+                <p>Bournemouth BH1 3NE, UK</p>
+              </div>
+            </div>
+
+            <div className="flex items-start gap-4">
+              <span className="text-yellow-400 pt-1">
+                <FaEnvelope size={20} />
+              </span>
+              <div>
+                <p className="font-semibold text-lg">Send us an email</p>
+                <p>hello@better.co</p>
+              </div>
+            </div>
+
+            <div className="flex items-start gap-4">
+              <span className="text-yellow-400 pt-1">
+                <FaPhone size={20} />
+              </span>
+              <div>
+                <p className="font-semibold text-lg">Give us a call</p>
+                <p>0330 118 3069</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Right column - Contact form */}
+        <div className="bg-transparent p-4">
+          <form
+            ref={formRef}
+            onSubmit={sendEmail}
+            className="space-y-6 text-gray-800"
+          >
+            <div>
+              <label className="block text-white mb-1">First Name</label>
+              <input
+                type="text"
+                name="first_name"
+                placeholder="John"
+                required
+                className="w-full px-4 py-3 rounded-full border-none focus:ring-2 focus:ring-blue-300 outline-none"
+              />
+            </div>
+
+            <div>
+              <label className="block text-white mb-1">Last Name</label>
+              <input
+                type="text"
+                name="last_name"
+                placeholder="Doe"
+                required
+                className="w-full px-4 py-3 rounded-full border-none focus:ring-2 focus:ring-blue-300 outline-none"
+              />
+            </div>
+
+            <div>
+              <label className="block text-white mb-1">Email Address</label>
+              <input
+                type="email"
+                name="from_email"
+                placeholder="Enter your email"
+                required
+                className="w-full px-4 py-3 rounded-full border-none focus:ring-2 focus:ring-blue-300 outline-none"
+              />
+            </div>
+
+            <div>
+              <label className="block text-white mb-1">Company name</label>
+              <input
+                type="text"
+                name="company_name"
+                placeholder="Your company name"
+                className="w-full px-4 py-3 rounded-full border-none focus:ring-2 focus:ring-blue-300 outline-none"
+              />
+            </div>
+
+            <div>
+              <label className="block text-white mb-1">Message</label>
+              <textarea
+                name="message"
+                rows={4}
+                placeholder="Type your message"
+                required
+                className="w-full px-4 py-3 rounded-xl border-none focus:ring-2 focus:ring-blue-300 outline-none"
+              />
+            </div>
+
+            <button
+              type="submit"
+              disabled={isSubmitting}
+              className="w-full bg-yellow-400 hover:bg-yellow-500 text-blue-900 font-bold py-3 rounded-full transition"
+            >
+              {isSubmitting ? "Sending..." : "Send a message"}
+            </button>
+
+            {messageSent && (
+              <p className="text-green-400 mt-4 text-center">
+                ✅ Your message has been sent!
+              </p>
+            )}
+          </form>
+        </div>
+      </div>
+    </section>
+  );
 }
+
+export default ContactUs;
