@@ -5,7 +5,7 @@ import { ArrowRight } from "lucide-react"; // You can swap this with any icon li
 
 const AboutUs = () => {
     return (
-        <section className="bg-white py- px-4 md:px-12">
+        <section className="bg-white py- px-4 md:px-12" id='about'>
             <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-6 items-center">
                 <div className="w-full h-64 md:h-full">
                     <Image
@@ -19,7 +19,7 @@ const AboutUs = () => {
 
                 {/* Text Content */}
                 <div>
-                    <h2 className="text-black text-3xl font-semibold mb-4 mt-8">About</h2>
+                    <h2 className="text-black text-3xl font-semibold mb-4">About</h2>
                     <p className="text-lg text-gray-700 mb-4">
                         <span className="font-semibold">Infinet Solutions</span> is a local, family-run Welsh telecom company offering reliable and friendly service.
                     </p>

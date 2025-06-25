@@ -44,6 +44,10 @@ body {
 .text-bg{
   text-decoration-color: #0F1B2A;
 }
+.text-yella{
+  color: #D09D42;
+
+}
 
 @layer utilities {
   .animate-float {

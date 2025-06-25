@@ -78,7 +78,7 @@ const cardVariants = {
 
 const Services = () => {
   return (
-    <section className="bg-[#0F1B2A] py-20 px-4 md:px-12 text-[#ededed]">
+    <section className="bg-[#0F1B2A] py-20 px-4 md:px-12 text-[#ededed]" id="services">
       <div className="max-w-7xl mx-auto text-center mb-16">
         <h2 className="text-4xl font-bold text-white">Our Services</h2>
         <p className="text-gray-300 mt-4 text-lg max-w-2xl mx-auto">

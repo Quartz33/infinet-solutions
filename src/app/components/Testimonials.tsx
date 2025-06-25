@@ -80,7 +80,7 @@ const testimonials = [
 
 export default function Testimonials() {
   return (
-    <div className="bg-white py-24 sm:py-32">
+    <div className="bg-white py-6 " id="testimonials">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         {/* Heading */}
         <div className="mx-auto max-w-2xl text-center">
@@ -132,7 +132,7 @@ export default function Testimonials() {
         </div>
 
         {/* Trustpilot Widget */}
-        <div className="mt-16 text-center">
+        <div className="text-center">
           <TrustpilotWidget />
         </div>
       </div>

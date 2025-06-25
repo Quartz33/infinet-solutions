@@ -1,13 +1,14 @@
 import type { Metadata } from "next";
-import {  Roboto } from "next/font/google";
-
+import { Roboto } from "next/font/google";
+import { Header } from "./components/header";
+import Footer from "./components/Footer";
 import "./globals.css";
 
 const roboto = Roboto({
-  weight: '600',
-  subsets: ['latin'],
-  display: 'swap'
-})
+  weight: "600",
+  subsets: ["latin"],
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -21,8 +22,18 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={roboto.className}>
-      <script type="text/javascript" src="//widget.trustpilot.com/bootstrap/v5/tp.widget.bootstrap.min.js" async></script>
-      <body>{children}</body>
+      <head>
+        <script
+          type="text/javascript"
+          src="//widget.trustpilot.com/bootstrap/v5/tp.widget.bootstrap.min.js"
+          async
+        ></script>
+      </head>
+      <body>
+        <Header />
+        {children}
+        <Footer />
+      </body>
     </html>
   );
 }

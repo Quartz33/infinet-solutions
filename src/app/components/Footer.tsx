@@ -6,6 +6,7 @@ const navigation = {
     { name: 'Press', href: '#' },
     { name: 'Accessibility', href: '#' },
     { name: 'Partners', href: '#' },
+    { name: 'Privacy Policy', href: '/privacy-policy' },
   ],
   social: [
     {
@@ -24,7 +25,7 @@ const navigation = {
     {
       name: 'Instagram',
       href: '#',
-      icon: (props : object) => (
+      icon: (props: object) => (
         <svg fill="currentColor" viewBox="0 0 24 24" {...props}>
           <path
             fillRule="evenodd"
@@ -61,7 +62,7 @@ export default function Example() {
           {navigation.social.map((item) => (
             <a key={item.name} href={item.href} className="text-gray-400 hover:text-gray-300">
               <span className="sr-only">{item.name}</span>
-              <item.icon aria-hidden="true"/>
+              <item.icon aria-hidden="true" />
             </a>
           ))}
         </div>

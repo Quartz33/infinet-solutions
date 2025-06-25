@@ -39,7 +39,7 @@ export function ContactUs() {
   };
 
   return (
-    <section className="bg-[#001e7c] text-white py-20 px-6 md:px-12">
+    <section className="bg-color text-white py-20 px-6 md:px-12" id="contact">
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
         {/* Left column */}
         <div>
@@ -54,33 +54,33 @@ export function ContactUs() {
 
           <div className="space-y-10 text-sm text-white">
             <div className="flex items-start gap-4">
-              <span className="text-yellow-400 pt-1">
+              <span className="text-yella pt-1">
                 <FaMapMarkerAlt size={20} />
               </span>
               <div>
                 <p className="font-semibold text-lg">Office Address</p>
-                <p>Telephone House, 18 Christchurch Rd,</p>
-                <p>Bournemouth BH1 3NE, UK</p>
+                <p>The Maltings, East Tyndall Street,</p>
+                <p>Cardiff, CF24 5EZ</p>
               </div>
             </div>
 
             <div className="flex items-start gap-4">
-              <span className="text-yellow-400 pt-1">
+              <span className="text-yella pt-1">
                 <FaEnvelope size={20} />
               </span>
               <div>
                 <p className="font-semibold text-lg">Send us an email</p>
-                <p>hello@better.co</p>
+                <p>red@infinetsolutions.co.uk</p>
               </div>
             </div>
 
             <div className="flex items-start gap-4">
-              <span className="text-yellow-400 pt-1">
+              <span className="text-yella pt-1">
                 <FaPhone size={20} />
               </span>
               <div>
                 <p className="font-semibold text-lg">Give us a call</p>
-                <p>0330 118 3069</p>
+                <p>02922 520704</p>
               </div>
             </div>
           </div>
@@ -100,7 +100,7 @@ export function ContactUs() {
                 name="first_name"
                 placeholder="John"
                 required
-                className="w-full px-4 py-3 rounded-full border-none focus:ring-2 focus:ring-blue-300 outline-none"
+                className="w-full px-4 py-3 rounded-full bg-slate-100 border-none focus:ring-2 focus:ring-blue-300 outline-none"
               />
             </div>
 
@@ -111,7 +111,7 @@ export function ContactUs() {
                 name="last_name"
                 placeholder="Doe"
                 required
-                className="w-full px-4 py-3 rounded-full border-none focus:ring-2 focus:ring-blue-300 outline-none"
+                className="w-full px-4 py-3 rounded-full bg-slate-100 border-none focus:ring-2 focus:ring-blue-300 outline-none"
               />
             </div>
 
@@ -122,7 +122,7 @@ export function ContactUs() {
                 name="from_email"
                 placeholder="Enter your email"
                 required
-                className="w-full px-4 py-3 rounded-full border-none focus:ring-2 focus:ring-blue-300 outline-none"
+                className="w-full px-4 py-3 rounded-full bg-slate-100 border-none focus:ring-2 focus:ring-blue-300 outline-none"
               />
             </div>
 
@@ -132,7 +132,7 @@ export function ContactUs() {
                 type="text"
                 name="company_name"
                 placeholder="Your company name"
-                className="w-full px-4 py-3 rounded-full border-none focus:ring-2 focus:ring-blue-300 outline-none"
+                className="w-full px-4 py-3 rounded-full bg-slate-100 border-none focus:ring-2 focus:ring-blue-300 outline-none"
               />
             </div>
 
@@ -143,7 +143,7 @@ export function ContactUs() {
                 rows={4}
                 placeholder="Type your message"
                 required
-                className="w-full px-4 py-3 rounded-xl border-none focus:ring-2 focus:ring-blue-300 outline-none"
+                className="w-full px-4 py-3 rounded-xl bg-slate-100 border-none focus:ring-2 focus:ring-blue-300 outline-none"
               />
             </div>
 

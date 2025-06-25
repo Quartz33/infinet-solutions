@@ -38,16 +38,18 @@ export function Header() {
                 {/* Desktop Nav */}
                 <div className="hidden md:flex items-center space-x-10 text-xl">
                     <NavLink href="/" className="hover:text-[#D09D42] transition">Home</NavLink>
-                    <NavLink href="#about" className="hover:text-[#D09D42] transition">Contact</NavLink>
-                    <NavLink href="#services" className="hover:text-[#D09D42] transition">About</NavLink>
+                    <NavLink href="#about" className="hover:text-[#D09D42] transition">About</NavLink>
+                    <NavLink href="#services" className="hover:text-[#D09D42] transition">Services</NavLink>
                     <NavLink href="#testimonials" className="hover:text-[#D09D42] transition">Testimonials</NavLink>
                 </div>
 
                 {/* CTA Button (Desktop Only) */}
                 <div className="hidden md:block">
+                    <a href="#contact">
                     <button className="bg-transparent border-2 border-[#D09D42] text-[#D09D42] hover:bg-[#D09D42] hover:text-[#0F1B2A] font-semibold py-2 px-5 rounded-md transition-all duration-200">
                         Contact Us
                     </button>
+                    </a>
                 </div>
 
                 {/* Mobile Menu Button */}
