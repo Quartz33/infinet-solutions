@@ -9,9 +9,9 @@ export function ContactUs() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [messageSent, setMessageSent] = useState(false);
 
-  const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID as string;
-  const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID as string;
-  const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLICKEY as string;
+  const serviceId = 'service_lj7xbll';
+  const templateId = 'template_vohkh0l';
+  const publicKey = 'TLdKQ8Kd0wcALqika';
 
   const sendEmail = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -94,27 +94,15 @@ export function ContactUs() {
             className="space-y-6 text-gray-800"
           >
             <div>
-              <label className="block text-white mb-1">First Name</label>
+              <label className="block text-white mb-1">Name</label>
               <input
                 type="text"
-                name="first_name"
-                placeholder="John"
+                name="from_name"
+                placeholder="John Doe"
                 required
                 className="w-full px-4 py-3 rounded-full bg-slate-100 border-none focus:ring-2 focus:ring-blue-300 outline-none"
               />
             </div>
-
-            <div>
-              <label className="block text-white mb-1">Last Name</label>
-              <input
-                type="text"
-                name="last_name"
-                placeholder="Doe"
-                required
-                className="w-full px-4 py-3 rounded-full bg-slate-100 border-none focus:ring-2 focus:ring-blue-300 outline-none"
-              />
-            </div>
-
             <div>
               <label className="block text-white mb-1">Email Address</label>
               <input
@@ -130,7 +118,7 @@ export function ContactUs() {
               <label className="block text-white mb-1">Company name</label>
               <input
                 type="text"
-                name="company_name"
+                name="from_company"
                 placeholder="Your company name"
                 className="w-full px-4 py-3 rounded-full bg-slate-100 border-none focus:ring-2 focus:ring-blue-300 outline-none"
               />

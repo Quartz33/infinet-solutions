@@ -10,15 +10,11 @@ const TrustpilotWidget = () => {
             rel="noopener noreferrer"
             className="flex items-center gap-1 text-[#00B67A] font-semibold hover:underline"
           >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-              fill="#00B67A"
-              className="w-4 h-4"
-            >
-              <path d="M12 2l2.93 5.93 6.54.95-4.73 4.61 1.12 6.51L12 17.77l-5.86 3.08 1.12-6.51-4.73-4.61 6.54-.95L12 2z" />
-            </svg>
-            Trustpilot
+            <img
+              src="/images/trustpilot-logo.svg"
+              alt="Trustpilot"
+              className="w-5 h-5 object-contain"
+            />
           </a>
         </p>
       </div>

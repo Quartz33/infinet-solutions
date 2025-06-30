@@ -86,7 +86,7 @@ export default function Testimonials() {
         <div className="mx-auto max-w-2xl text-center">
           <h2 className="text-base font-semibold text-indigo-600">Testimonials</h2>
           <p className="mt-2 text-4xl font-semibold tracking-tight text-balance text-gray-900 sm:text-5xl">
-            We have worked with hundereds of amazing business
+            We have worked with hundreds of amazing business
           </p>
         </div>
 
