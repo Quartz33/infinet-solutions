@@ -1,3 +1,4 @@
+
 const TrustpilotWidget = () => {
   return (
     <section className="w-full px-4 py-16 bg-white">
@@ -9,12 +10,8 @@ const TrustpilotWidget = () => {
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-1 text-[#00B67A] font-semibold hover:underline"
-          >
-            <img
-              src="/images/trustpilot-logo.svg"
-              alt="Trustpilot"
-              className="w-5 h-5 object-contain"
-            />
+          >Trustpilot
+            
           </a>
         </p>
       </div>

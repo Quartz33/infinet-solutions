@@ -10,13 +10,14 @@ import {
   Repeat,
 } from "lucide-react";
 import Image from "next/image";
-import { motion } from "framer-motion";
-import businessInternetImg from '@/app/images/business-internet.jpg'
-import cloudImg from '@/app/images/Cloud-Telephony-Guide.jpg'
-import managedServicesImg from '@/app/images/managed services.png'
-import businessContinuityImg from '@/app/images/business-continuity.webp'
-import wifiImg from '@/app/images/wireless-internet.jpg'
-import vpnImg from '@/app/images/vpn.webp'
+import { motion, Variants } from "framer-motion"; // ✅ Import Variants
+
+import businessInternetImg from "@/app/images/business-internet.jpg";
+import cloudImg from "@/app/images/Cloud-Telephony-Guide.jpg";
+import managedServicesImg from "@/app/images/managed services.png";
+import businessContinuityImg from "@/app/images/business-continuity.webp";
+import wifiImg from "@/app/images/wireless-internet.jpg";
+import vpnImg from "@/app/images/vpn.webp";
 
 const services = [
   {
@@ -63,7 +64,8 @@ const services = [
   },
 ];
 
-const cardVariants = {
+// ✅ Correctly typed cardVariants with Variants
+const cardVariants: Variants = {
   hidden: { opacity: 0, y: 40 },
   visible: (i: number) => ({
     opacity: 1,
@@ -78,7 +80,10 @@ const cardVariants = {
 
 const Services = () => {
   return (
-    <section className="bg-[#0F1B2A] py-20 px-4 md:px-12 text-[#ededed]" id="services">
+    <section
+      className="bg-[#0F1B2A] py-20 px-4 md:px-12 text-[#ededed]"
+      id="services"
+    >
       <div className="max-w-7xl mx-auto text-center mb-16">
         <h2 className="text-4xl font-bold text-white">Our Services</h2>
         <p className="text-gray-300 mt-4 text-lg max-w-2xl mx-auto">
@@ -96,7 +101,7 @@ const Services = () => {
             whileInView="visible"
             viewport={{ once: true, amount: 0.2 }}
             variants={cardVariants}
-            className="bg-white text-[#0f1b2A] rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition"
+            className="bg-white text-[#0F1B2A] rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition"
           >
             <Image
               src={service.image}
