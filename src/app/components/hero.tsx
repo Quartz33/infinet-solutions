@@ -67,9 +67,11 @@ export function Hero() {
               WhatsApp integration, remote solutions, and more.
             </p>
             <div className="mt-8">
+              <a href="#contact">
               <button className="bg-[#D09D42] hover:bg-yellow-500 text-[#0F1B2A] font-bold py-4 px-8 text-xl rounded-md flex items-center gap-2 transition">
-                Get in touch <ArrowRight size={24} />
+                Get in touch <ArrowRight size={24}/>
               </button>
+              </a>
             </div>
           </div>
 

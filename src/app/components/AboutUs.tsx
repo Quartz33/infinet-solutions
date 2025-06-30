@@ -5,7 +5,7 @@ import { ArrowRight } from "lucide-react"; // You can swap this with any icon li
 
 const AboutUs = () => {
     return (
-        <section className="bg-white py- px-4 md:px-12" id='about'>
+        <section className="bg-white py-8 px-4 md:px-12" id='about' >
             <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-6 items-center">
                 <div className="w-full h-64 md:h-full">
                     <Image
@@ -29,12 +29,10 @@ const AboutUs = () => {
                     <p className="text-md text-gray-600 mb-6">
                         Count on us for clear pricing, responsive support, and seamless connectivity.
                     </p>
+                    <button className="inline-flex items-center text-blue-600 font-medium hover:underline transition pb-8">
+                        Learn More About Us <ArrowRight className="ml-2 w-4 h-4" />
+                    </button>
                 </div>
-
-
-                <button className="inline-flex items-center text-blue-600 font-medium hover:underline transition pb-8">
-                    Learn More About Us <ArrowRight className="ml-2 w-4 h-4" />
-                </button>
             </div>
         </section>
     );
