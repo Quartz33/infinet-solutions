@@ -68,7 +68,7 @@ const faqs = [
 
 export default function Faqs() {
   return (
-    <div className="bg-white py-20 px-6 sm:px-10">
+    <div className="bg-white py-20 px-6 sm:px-10" id="faqs">
       <div className="mx-auto max-w-3xl">
         <h2 className="text-3xl font-bold text-gray-900 mb-12">
           Frequently Asked Questions
@@ -100,7 +100,7 @@ export default function Faqs() {
                   >
                     <DisclosurePanel
                       static
-                      className="mt-4 text-sm text-gray-300 overflow-hidden transition-all duration-300 ease-in-out"
+                      className="mt-4 text-sm text-gray-300 overflow-hidden transition-all duration-300 ease-in-out "
                     >
                       {faq.answer}
                     </DisclosurePanel>

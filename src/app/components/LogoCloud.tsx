@@ -42,7 +42,7 @@ const logos = [
 
 const AnimatedLogoCloud = () => {
     return (
-        <div className="w-full py-8 bg-white">
+        <div className="w-full py-8 bg-white" id="partners">
             <div className="mx-auto w-full px-4 md:px-8 text-center">
                 <a className="text-black text-2xl font-[Roboto] font-semibold ">Our trusted partners</a>
                 <div

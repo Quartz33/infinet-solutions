@@ -1,11 +1,10 @@
 const navigation = {
   main: [
-    { name: 'About', href: '#' },
-    { name: 'Blog', href: '#' },
-    { name: 'Jobs', href: '#' },
-    { name: 'Press', href: '#' },
-    { name: 'Accessibility', href: '#' },
-    { name: 'Partners', href: '#' },
+    { name: 'About', href: '#about' },
+    { name: 'Services', href: '#services' },
+    { name: 'Faqs', href: '#faqs' },
+    { name: 'Testimonials', href: '#testimonials' },
+    { name: 'Partners', href: '#partners' },
     { name: 'Privacy Policy', href: '/privacy-policy' },
   ],
   social: [
@@ -67,7 +66,7 @@ export default function Example() {
           ))}
         </div>
         <p className="mt-10 text-center text-sm/6 text-gray-400">&copy; 2025 Infinet Solutions, Inc. All rights reserved.</p>
-        <p className="mt-10 text-center text-sm/6 text-gray-600">Website Developed by <a className="text-blue-400" href="https://vectismedia.com">Vectis Media</a></p>
+        <p className="mt-10 text-center text-sm/6 text-gray-500">Website Developed by <a className="text-blue-400" href="https://vectismedia.com">Vectis Media</a></p>
       </div>
     </footer>
   )

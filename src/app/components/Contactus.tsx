@@ -54,7 +54,7 @@ export function ContactUs() {
 
           <div className="space-y-10 text-sm text-white">
             <div className="flex items-start gap-4">
-              <span className="text-yella pt-1">
+              <span className="text-yella pt-2">
                 <FaMapMarkerAlt size={20} />
               </span>
               <div>
@@ -65,7 +65,7 @@ export function ContactUs() {
             </div>
 
             <div className="flex items-start gap-4">
-              <span className="text-yella pt-1">
+              <span className="text-yella pt-2">
                 <FaEnvelope size={20} />
               </span>
               <div>
@@ -75,7 +75,7 @@ export function ContactUs() {
             </div>
 
             <div className="flex items-start gap-4">
-              <span className="text-yella pt-1">
+              <span className="text-yella pt-2">
                 <FaPhone size={20} />
               </span>
               <div>
