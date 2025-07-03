@@ -5,27 +5,29 @@ import TrustpilotWidget from "./TrustBoxContainer";
 
 const testimonials = [
   {
-    body: "You can tell the team cares about getting it right the first time. Every detail was handled properly.",
+    body: "Excellent service from start to finish with the help of Infinet solutions. We had a very dodgy contract that we needed to get out of with Circle cloud which was quite a difficult situation, this even challenged the guys from Infinet solutions but we eventually got the best outcome we could of asked for, the guys were very helpful and patient with the whole process. special thanks to Oli, Corey and Karl for there help and patience along the way, nothing was ever too much trouble. We made big savings by changing over our contract, we will definitely recommend you guys.",
     author: {
-      name: "Jack Lewis",
-      handle: "jacklewis",
-      imageUrl: "https://randomuser.me/api/portraits/men/32.jpg",
+      name: "Pineland Sales",
+      handle: "pinelandsales",
+
+      dateofExperience: "June 03, 2025"
     },
   },
   {
-    body: "We’ve saved time and money thanks to the new system. Calls are routed more efficiently and our team is more productive.",
+    body: "Saved my company £300 per month! Excellent service ",
     author: {
-      name: "Zakariya Mitchell",
+      name: "Gareth Hayden",
       handle: "zmitchell",
-      imageUrl: "https://randomuser.me/api/portraits/men/15.jpg",
+
+      dateofExperience: "June 03, 2025"
     },
   },
   {
-    body: "Reliable internet for a growing business. Infinet Solutions provided a fibre solution that scales with us.",
+    body: "Really pleased with our new system, the team are there for you every inch of the way for any help and support you need, would definitely recommend.",
     author: {
-      name: "William Davis",
-      handle: "wdavis",
-      imageUrl: "https://randomuser.me/api/portraits/men/23.jpg",
+      name: "Louise Rice",
+      handle: "Louise Rice",
+
     },
   },
   {
@@ -33,7 +35,7 @@ const testimonials = [
     author: {
       name: "Oliver Smith",
       handle: "olismith",
-      imageUrl: "https://randomuser.me/api/portraits/men/11.jpg",
+
     },
   },
   {
@@ -41,7 +43,7 @@ const testimonials = [
     author: {
       name: "Clara",
       handle: "clarauk",
-      imageUrl: "https://randomuser.me/api/portraits/women/17.jpg",
+
     },
   },
   {
@@ -49,7 +51,7 @@ const testimonials = [
     author: {
       name: "Rhys Carter",
       handle: "rcarter",
-      imageUrl: "https://randomuser.me/api/portraits/men/5.jpg",
+
     },
   },
   {
@@ -57,7 +59,7 @@ const testimonials = [
     author: {
       name: "Alfie Davies",
       handle: "alfiedavies",
-      imageUrl: "https://randomuser.me/api/portraits/men/45.jpg",
+
     },
   },
   {
@@ -65,7 +67,7 @@ const testimonials = [
     author: {
       name: "Mila Hughes",
       handle: "mila",
-      imageUrl: "https://randomuser.me/api/portraits/women/14.jpg",
+
     },
   },
   {
@@ -73,7 +75,7 @@ const testimonials = [
     author: {
       name: "Kamran Lewis",
       handle: "kamran",
-      imageUrl: "https://randomuser.me/api/portraits/men/34.jpg",
+
     },
   },
 ];
@@ -112,10 +114,10 @@ export default function Testimonials() {
                   </blockquote>
 
                   {/* Author Info */}
-                  <figcaption className="mt-6 flex items-center gap-x-4">
+                  <figcaption className="mt-6 flex items-start gap-x-4">
                     <img
                       alt={testimonial.author.name}
-                      src={testimonial.author.imageUrl}
+                      src='https://ui-avatars.com/api/?name=User'
                       className="size-10 rounded-full bg-gray-50"
                     />
                     <div>
@@ -123,6 +125,11 @@ export default function Testimonials() {
                         {testimonial.author.name}
                       </div>
                       <div className="text-gray-600">{`@${testimonial.author.handle}`}</div>
+                      {testimonial.author.dateofExperience && (
+                        <div className="text-gray-500 text-xs mt-1">
+                          Experience Date: {testimonial.author.dateofExperience}
+                        </div>
+                      )}
                     </div>
                   </figcaption>
                 </figure>
