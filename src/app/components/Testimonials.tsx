@@ -1,145 +1,151 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import { Star } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
 import TrustpilotWidget from "./TrustBoxContainer";
 
 const testimonials = [
   {
-    body: "Excellent service from start to finish with the help of Infinet solutions. We had a very dodgy contract that we needed to get out of with Circle cloud which was quite a difficult situation, this even challenged the guys from Infinet solutions but we eventually got the best outcome we could of asked for, the guys were very helpful and patient with the whole process. special thanks to Oli, Corey and Karl for there help and patience along the way, nothing was ever too much trouble. We made big savings by changing over our contract, we will definitely recommend you guys.",
+    body: "Excellent service from start to finish with the help of Infinet solutions. We had a very dodgy contract that we needed to get out of with Circle cloud which was quite a difficult situation, this even challenged the guys from Infinet solutions but we eventually got the best outcome we could of asked for, the guys were very helpful and patient with the whole process. Special thanks to Oli, Corey and Karl for their help and patience along the way, nothing was ever too much trouble. We made big savings by changing over our contract, we will definitely recommend you guys.",
     author: {
       name: "Pineland Sales",
-      handle: "pinelandsales",
-
-      dateofExperience: "June 03, 2025"
+      title: "Pineland Sales Ltd",
+      imageUrl: "https://ui-avatars.com/api/?name=Pineland+Sales&background=random",
     },
   },
   {
     body: "Saved my company £300 per month! Excellent service ",
     author: {
       name: "Gareth Hayden",
-      handle: "zmitchell",
-
-      dateofExperience: "June 03, 2025"
+      title: "GH Engineering",
+      imageUrl: "https://ui-avatars.com/api/?name=Gareth+Hayden&background=random",
     },
   },
   {
     body: "Really pleased with our new system, the team are there for you every inch of the way for any help and support you need, would definitely recommend.",
     author: {
       name: "Louise Rice",
-      handle: "Louise Rice",
-
+      title: "Customer",
+      imageUrl: "https://ui-avatars.com/api/?name=Louise+Rice&background=random",
     },
   },
   {
     body: "The system has grown with us. As we’ve added staff, it’s been easy to expand our phone setup.",
     author: {
       name: "Oliver Smith",
-      handle: "olismith",
-
+      title: "Customer",
+      imageUrl: "https://ui-avatars.com/api/?name=Oliver+Smith&background=random",
     },
   },
   {
     body: "Friendly and helpful team — nothing was too much trouble. Helped us set up custom greetings and call groups.",
     author: {
       name: "Clara",
-      handle: "clarauk",
-
+      title: "Customer",
+      imageUrl: "https://ui-avatars.com/api/?name=Clara&background=random",
     },
   },
   {
     body: "The touchscreen is a game-changer. Easier to use than our old phones and looks modern.",
     author: {
       name: "Rhys Carter",
-      handle: "rcarter",
-
+      title: "Customer",
+      imageUrl: "https://ui-avatars.com/api/?name=Rhys+Carter&background=random",
     },
   },
   {
     body: "Excellent aftercare. We had a minor setting issue after install, sorted remotely in minutes.",
     author: {
       name: "Alfie Davies",
-      handle: "alfiedavies",
-
+      title: "Customer",
+      imageUrl: "https://ui-avatars.com/api/?name=Alfie+Davies&background=random",
     },
   },
   {
     body: "What stood out was how smooth the installation was. Calls are crystal clear, and we love voicemail-to-email.",
     author: {
       name: "Mila Hughes",
-      handle: "mila",
-
+      title: "Customer",
+      imageUrl: "https://ui-avatars.com/api/?name=Mila+Hughes&background=random",
     },
   },
   {
     body: "Fantastic service from start to finish. Sales were honest, installation was smooth, phones work perfectly.",
     author: {
       name: "Kamran Lewis",
-      handle: "kamran",
-
+      title: "Customer",
+      imageUrl: "https://ui-avatars.com/api/?name=Kamran+Lewis&background=random",
     },
   },
 ];
 
 export default function Testimonials() {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex((prev) => (prev + 1) % testimonials.length);
+    }, 8000);
+    return () => clearInterval(interval);
+  }, []);
+
+  const testimonial = testimonials[currentIndex];
+
   return (
-    <div className="bg-white py-6 " id="testimonials">
-      <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        {/* Heading */}
-        <div className="mx-auto max-w-2xl text-center">
-          <h2 className="text-base font-semibold text-indigo-600">Testimonials</h2>
-          <p className="mt-2 text-4xl font-semibold tracking-tight text-balance text-gray-900 sm:text-5xl">
-            We have worked with hundreds of amazing business
+    <div className="bg-[#f8f9fc] py-16 px-6" id="testimonials">
+      <div className="mx-auto max-w-6xl">
+        <div className="text-center mb-10">
+          <h2 className="text-indigo-600 font-semibold text-base">Testimonials</h2>
+          <p className="mt-2 text-4xl font-bold text-gray-900">
+            What our clients are saying
           </p>
         </div>
 
-        {/* Testimonials Grid */}
-        <div className="mx-auto mt-16 flow-root max-w-2xl sm:mt-20 lg:mx-0 lg:max-w-none">
-          <div className="-mt-8 sm:-mx-4 sm:columns-2 sm:text-[0] lg:columns-3">
-            {testimonials.map((testimonial) => (
-              <div
-                key={testimonial.author.handle}
-                className="pt-8 sm:inline-block sm:w-full sm:px-4"
-              >
-                <figure className="rounded-2xl bg-gray-50 p-8 text-sm/6 shadow-md hover:shadow-lg transition">
-                  {/* Stars */}
-                  <div className="flex justify-center mb-4" aria-label="5 star rating">
-                    {[...Array(5)].map((_, i) => (
-                      <Star key={i} className="w-4 h-4 text-yellow-400 fill-yellow-400" />
-                    ))}
-                  </div>
-
-                  {/* Quote */}
-                  <blockquote className="text-gray-900">
-                    <p>{`“${testimonial.body}”`}</p>
-                  </blockquote>
-
-                  {/* Author Info */}
-                  <figcaption className="mt-6 flex items-start gap-x-4">
-                    <img
-                      alt={testimonial.author.name}
-                      src='https://ui-avatars.com/api/?name=User'
-                      className="size-10 rounded-full bg-gray-50"
-                    />
-                    <div>
-                      <div className="font-semibold text-gray-900">
-                        {testimonial.author.name}
-                      </div>
-                      <div className="text-gray-600">{`@${testimonial.author.handle}`}</div>
-                      {testimonial.author.dateofExperience && (
-                        <div className="text-gray-500 text-xs mt-1">
-                          Experience Date: {testimonial.author.dateofExperience}
-                        </div>
-                      )}
-                    </div>
-                  </figcaption>
-                </figure>
+        <div className="relative min-h-[300px] sm:min-h-[460px]">
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={currentIndex}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.6 }}
+              className="flex flex-col md:flex-row items-center gap-10 bg-white p-8 rounded-2xl shadow-md"
+            >
+              {/* Author Info */}
+              <div className="flex flex-col items-center md:items-start w-full md:w-1/3 text-center md:text-left">
+                <img
+                  src={testimonial.author.imageUrl}
+                  alt={testimonial.author.name}
+                  className="w-24 h-24 rounded-full object-cover border-4 border-indigo-100"
+                />
+                <h3 className="mt-4 text-lg font-bold text-gray-900">
+                  {testimonial.author.name}
+                </h3>
+                <p className="text-sm text-gray-600">{testimonial.author.title}</p>
               </div>
-            ))}
-          </div>
+
+              {/* Quote */}
+              <div className="relative w-full md:w-2/3 text-left">
+                <div className="text-4xl text-orange-400 mb-2">“</div>
+                <p className="text-gray-800 text-lg leading-relaxed">
+                  {testimonial.body}
+                </p>
+                <div className="text-4xl text-orange-400 mt-2 text-right">”</div>
+
+                {/* Stars */}
+                <div className="flex mt-4 text-yellow-400">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} className="w-5 h-5 fill-yellow-400" />
+                  ))}
+                </div>
+              </div>
+            </motion.div>
+          </AnimatePresence>
         </div>
 
         {/* Trustpilot Widget */}
-        <div className="text-center">
+        <div className="mt-16 text-center">
           <TrustpilotWidget />
         </div>
       </div>

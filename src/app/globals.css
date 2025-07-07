@@ -65,7 +65,9 @@
 }
 .text-yella{
   color: #D09D42;
-
+}
+.text-yella-header{
+  text-decoration-color: #D09D42;
 }
 
 @layer utilities {

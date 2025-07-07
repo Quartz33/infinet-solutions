@@ -92,7 +92,7 @@ const Services = () => {
         </p>
       </div>
 
-      <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3 max-w-7xl mx-auto">
+      <div className="grid gap-30 sm:grid-cols-2 lg:grid-cols-3 max-w-7xl mx-auto">
         {services.map((service, index) => (
           <motion.div
             key={index}
@@ -106,8 +106,8 @@ const Services = () => {
             <Image
               src={service.image}
               alt={service.title}
-              className="w-full h-40 object-cover"
-              width={400}
+              className="w-full h-60 object-cover"
+              width={600}
               height={192}
             />
             <div className="p-6">

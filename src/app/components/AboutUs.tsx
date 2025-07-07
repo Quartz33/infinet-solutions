@@ -19,8 +19,8 @@ const AboutUs = () => {
 
                 {/* Text Content */}
                 <div>
-                    <h2 className="text-black text-3xl font-semibold mb-4">About</h2>
-                    <p className="text-lg text-gray-700 mb-4">
+                    <h2 className="text-black text-4xl font-semibold mb-4">About</h2>
+                    <p className="text-2xl text-gray-700 mb-4">
                         <span className="font-semibold">Infinet Solutions</span> is a local, family-run Welsh telecom company offering reliable and friendly service.
                     </p>
                     <p className="text-md text-gray-600 mb-4">

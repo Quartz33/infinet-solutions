@@ -5,7 +5,7 @@ const navigation = {
     { name: 'Faqs', href: '#faqs' },
     { name: 'Testimonials', href: '#testimonials' },
     { name: 'Partners', href: '#partners' },
-    { name: 'Privacy Policy', href: '/privacy-policy' },
+    {name: 'Terms and Conditions', href:"/"}
   ],
   social: [
     {
