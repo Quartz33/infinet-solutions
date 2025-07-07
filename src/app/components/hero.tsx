@@ -3,10 +3,6 @@
 import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 import heroImg from "@/app/images/hero.png";
-import rocketImg from "@/app/images/rocket.svg"
-import planetImg from "@/app/images/planet.svg"
-import startImg from "@/app/images/star.svg"
-import lineImg from "@/app/images/line.svg"
 import { BackgroundBeamsWithCollision } from "./ui/background-beams";
 
 import backgroundImg from "@/app/images/Cardiff-Bay-Night.jpg"
